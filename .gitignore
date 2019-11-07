@@ -23,8 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 public/sility
 public/index2.html
-public/css
-public/fonts
-public/images
-public/js
+
 
