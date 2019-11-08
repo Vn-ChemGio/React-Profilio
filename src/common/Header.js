@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 
 class Header extends Component {
+    constructor(props){
+        super(props)
+    };
+
     render(){
+        let {socialNav, sectionNav} = this.props.header;
         return(
             <header className="header">
                 <div className="top clearfix">
@@ -15,11 +20,7 @@ class Header extends Component {
                     <div className="popup">
                         <nav className="social-nav">
                             <ul className="list-unstyled">
-                                <li><a href>Facebook</a></li>
-                                <li><a href>Twitter</a></li>
-                                <li><a href>Linkedin</a></li>
-                                <li><a href>Google+</a></li>
-                                <li><a href>Behance</a></li>
+                                {socialNav.map((each, index) =>   <li key={index}><a href = {each.href}>{each.name}</a></li>)}
                             </ul> {/* end .list-unstyled */}
                         </nav> {/* end .social-nav */}
                     </div> {/* end .popup */}
@@ -32,14 +33,7 @@ class Header extends Component {
                     <a href className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
                     <nav className="main-nav">
                         <ul className="list-unstyled">
-                            <li className="active"><a href="#section1">Home</a></li>
-                            <li><a href="#section2">About</a></li>
-                            <li><a href="#section3">Skill</a></li>
-                            <li><a href="#section4">Experience</a></li>
-                            <li><a href="#section5">Education</a></li>
-                            <li><a href="#section6">Work</a></li>
-                            <li><a href="#section7">Blog</a></li>
-                            <li><a href="#section8">Contact</a></li>
+                            {sectionNav.map((each, index) =>   <li key={index}   className={index ==0? "active" :""}><a href = {each.href}>{each.name}</a></li>)}
                         </ul>
                     </nav> {/* end .main-nav */}
                 </div> {/* end .bottom */}

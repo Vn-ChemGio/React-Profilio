@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 class SlideOut extends Component{
     render() {
+        let {imagesInstagram} = this.props.slideOut;
+        let {socialNav} = this.props.header;
         return(
             <div className="slide-out">
                 <header className="slide-out-header clearfix">
@@ -14,11 +16,7 @@ class SlideOut extends Component{
                     <div className="slide-out-popup">
                         <nav className="social-nav">
                             <ul className="list-unstyled">
-                                <li><a href>Facebook</a></li>
-                                <li><a href>Twitter</a></li>
-                                <li><a href>Linkedin</a></li>
-                                <li><a href>Google+</a></li>
-                                <li><a href>Behance</a></li>
+                                {socialNav.map((each, index) =>   <li key={index}><a href = {each.href}>{each.name}</a></li>)}
                             </ul> {/* end .list-unstyled */}
                         </nav> {/* end .social-nav */}
                     </div> {/* end .slide-out-popup */}
@@ -75,12 +73,7 @@ class SlideOut extends Component{
                     <div className="slide-out-widget">
                         <h4>Follow On Instagram</h4>
                         <div className="instagram">
-                            <a href><img src="images/instagram01.jpg" alt="alt text" className="img-responsive" /></a>
-                            <a href><img src="images/instagram02.jpg" alt="alt text" className="img-responsive" /></a>
-                            <a href><img src="images/instagram03.jpg" alt="alt text" className="img-responsive" /></a>
-                            <a href><img src="images/instagram04.jpg" alt="alt text" className="img-responsive" /></a>
-                            <a href><img src="images/instagram05.jpg" alt="alt text" className="img-responsive" /></a>
-                            <a href><img src="images/instagram06.jpg" alt="alt text" className="img-responsive" /></a>
+                            {imagesInstagram.map((each, index) =><a href ={each} ><img src={each} alt="alt text" className="img-responsive" /></a>)}
                         </div> {/* end .instagram */}
                     </div> {/* end .slide-out-widget */}
                 </div> {/* end .slide-out-widgets */}

@@ -1,7 +1,9 @@
 import React , {Component} from 'react';
 
 class Footer extends Component{
+
     render() {
+        let {socialNav, contact, address} = this.props.footer;
         return (
             <footer className="footer">
                 <div className="top">
@@ -9,21 +11,17 @@ class Footer extends Component{
                         <div className="row">
                             <div className="col-sm-4">
                                 <h4>Address</h4>
-                                <p>123 Sility, South Corner Street,<br />Melbornem Australia.</p>
+                                <p>{address}</p>
                             </div> {/* end .col-sm-4 */}
                             <div className="col-sm-4">
                                 <h4>Connect</h4>
                                 <div className="social-icons">
-                                    <a href={"/xxxx"} className="social-icon"><i className="fa fa-facebook" /></a>
-                                    <a href={"/xxxx"} className="social-icon"><i className="fa fa-twitter" /></a>
-                                    <a href={"/xxxx"} className="social-icon"><i className="fa fa-google-plus" /></a>
-                                    <a href={"/xxxx"} className="social-icon"><i className="fa fa-behance" /></a>
-                                    <a href={"/xxxx"} className="social-icon"><i className="fa fa-dribbble" /></a>
+                                    {socialNav.map((each, index) =>  <a href={each.href} className="social-icon"><i className={each.className}/></a> )}
                                 </div> {/* end .social-icons */}
                             </div> {/* end .col-sm-4 */}
                             <div className="col-sm-4">
                                 <h4>Contact</h4>
-                                <p>Tel: +61 123-456-7890<br />Mail: Sility@example.com</p>
+                                <p>{contact}</p>
                             </div> {/* end .col-sm-4 */}
                         </div> {/* end .row */}
                     </div> {/* end .container */}
