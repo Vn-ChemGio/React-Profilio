@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class MainPage extends Component {
+class Main extends Component {
     render() {
         return (
             <div className="sections">
@@ -818,4 +818,4 @@ class MainPage extends Component {
     }
 }
 
-export default MainPage;
+export default Main;
