@@ -16,7 +16,7 @@ class SlideOut extends Component{
                     <div className="slide-out-popup">
                         <nav className="social-nav">
                             <ul className="list-unstyled">
-                                {socialNav.map((each, index) =>   <li key={index}><a href = {each.href}>{each.name}</a></li>)}
+                                {socialNav.map((each, index) =>   <li key={index} ><a href = {each.href}>{each.name}</a></li>)}
                             </ul> {/* end .list-unstyled */}
                         </nav> {/* end .social-nav */}
                     </div> {/* end .slide-out-popup */}
@@ -73,7 +73,7 @@ class SlideOut extends Component{
                     <div className="slide-out-widget">
                         <h4>Follow On Instagram</h4>
                         <div className="instagram">
-                            {imagesInstagram.map((each, index) =><a href ={each} ><img src={each} alt="alt text" className="img-responsive" /></a>)}
+                            {imagesInstagram.map((each, index) =><a href ={each} key={index}><img src={each} alt="alt text" className="img-responsive" /></a>)}
                         </div> {/* end .instagram */}
                     </div> {/* end .slide-out-widget */}
                 </div> {/* end .slide-out-widgets */}

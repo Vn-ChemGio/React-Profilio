@@ -16,7 +16,7 @@ class Footer extends Component{
                             <div className="col-sm-4">
                                 <h4>Connect</h4>
                                 <div className="social-icons">
-                                    {socialNav.map((each, index) =>  <a href={each.href} className="social-icon"><i className={each.className}/></a> )}
+                                    {socialNav.map((each, index) =>  <a href={each.href} className="social-icon" key={index}><i className={each.className}/></a> )}
                                 </div> {/* end .social-icons */}
                             </div> {/* end .col-sm-4 */}
                             <div className="col-sm-4">
