@@ -1,7 +1,43 @@
 import React, {Component} from 'react';
+import Knob from "../Knob";
+
 import $ from 'jquery';
 
 class Skill extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            Knob: {
+                value1: 0,
+                value2: 0,
+                value3: 0
+            },
+            KnobMax :{
+                value1: 90,
+                value2: 80,
+                value3: 70
+            }
+        };
+
+
+        /*let inteval = setInterval(() =>{
+            this.setState({
+                Knob: this.getNextValue(this.state.Knob)
+            })
+        },500)*/
+
+    }
+
+    getNextValue (Knob){
+        return {
+            Knob:{
+                value1 : Knob.value1 < this.state.KnobMax.value1 ? Knob.value1+1 : this.state.KnobMax.value1,
+                value2 : Knob.value2 < this.state.KnobMax.value2 ? Knob.value2+1 : this.state.KnobMax.value2,
+                value3 : Knob.value3 < this.state.KnobMax.value3 ? Knob.value3+1 : this.state.KnobMax.value3,
+            }
+        }
+    }
     render() {
         return (
             <section id="section3">
@@ -88,8 +124,24 @@ class Skill extends Component {
                         <div className="col-sm-4">
                             <div className="circle-progress-wrapper clearfix">
                                 <div className="circle-progress">
-                                    <input type="text" className="dial" defaultValue={99} data-color="#7c4dff"
-                                           data-from={0} data-to={99}/>
+                                    <div className="circle-progress">
+                                        <Knob
+                                            value={this.state.KnobMax.value1}
+                                            lineCap={'round'}
+                                            readOnly={true}
+                                            width={200}
+                                            thickness={.05}
+                                            inputColor='#232323'
+                                            fgColor="#7c4dff"
+                                            bgColor='#e8e8e8'
+                                            min={0}
+                                            max={100}
+                                            step={1}
+
+
+                                        />
+
+                                    </div>
                                 </div>
                                 {/* end .circle-progress */}
                                 <div className="circle-progress-label-wrapper"><label
@@ -101,8 +153,22 @@ class Skill extends Component {
                         <div className="col-sm-4">
                             <div className="circle-progress-wrapper clearfix">
                                 <div className="circle-progress">
-                                    <input type="text" className="dial" defaultValue={80} data-color="#7c4dff"
-                                           data-from={0} data-to={80}/>
+                                    <Knob
+                                        value={this.state.KnobMax.value2}
+                                        lineCap={'round'}
+                                        readOnly={true}
+                                        width={200}
+                                        thickness={.05}
+                                        inputColor='#232323'
+                                        fgColor="#7c4dff"
+                                        bgColor='#e8e8e8'
+                                        min={0}
+                                        max={100}
+                                        step={1}
+
+
+                                    />
+
                                 </div>
                                 {/* end .circle-progress */}
                                 <div className="circle-progress-label-wrapper"><label
@@ -114,8 +180,24 @@ class Skill extends Component {
                         <div className="col-sm-4">
                             <div className="circle-progress-wrapper clearfix">
                                 <div className="circle-progress">
-                                    <input type="text" className="dial" defaultValue={69} data-color="#7c4dff"
-                                           data-from={0} data-to={69}/>
+                                    <div className="circle-progress">
+                                        <Knob
+                                            value={this.state.KnobMax.value3}
+                                            lineCap={'round'}
+                                            readOnly={true}
+                                            width={200}
+                                            thickness={.05}
+                                            inputColor='#232323'
+                                            fgColor="#7c4dff"
+                                            bgColor='#e8e8e8'
+                                            min={0}
+                                            max={100}
+                                            step={1}
+
+
+                                        />
+
+                                    </div>
                                 </div>
                                 {/* end .circle-progress */}
                                 <div className="circle-progress-label-wrapper"><label
@@ -137,35 +219,35 @@ class Skill extends Component {
             return ($(this).attr('aria-valuenow') + '%');
         });
 
+
         $('.dial').on('load', function (event, isInView) {
-            if (isInView) {
-                var $this = $(this);
-                var myVal = $this.attr("value");
-                var color = $this.attr("data-color");
-                $this.knob({
-                    readOnly: true,
-                    width: 200,
-                    rotation: 'anticlockwise',
-                    thickness: .05,
-                    inputColor: '#232323',
-                    fgColor: color,
-                    bgColor: '#e8e8e8',
-                    'draw' : function () {
-                        $(this.i).val(this.cv + '%')
-                    }
-                });
-                $({
-                    value: 0
-                }).animate({
-                    value: myVal
-                }, {
-                    duration: 1000,
-                    easing: 'swing',
-                    step: function() {
-                        $this.val(Math.ceil(this.value)).trigger('change');
-                    }
-                });
-            }
+            var $this = $(this);
+            var myVal = $this.attr("value");
+            var color = $this.attr("data-color");
+            $this.knob({
+                readOnly: true,
+                width: 200,
+                rotation: 'anticlockwise',
+                thickness: .05,
+                inputColor: '#232323',
+                fgColor: color,
+                bgColor: '#e8e8e8',
+                'draw': function () {
+                    $(this.i).val(this.cv + '%')
+                }
+            });
+            $({
+                value: 0
+            }).animate({
+                value: myVal
+            }, {
+                duration: 1000,
+                easing: 'swing',
+                step: function () {
+                    $this.val(Math.ceil(this.value)).trigger('change');
+                }
+            });
+
         });
     }
 }
