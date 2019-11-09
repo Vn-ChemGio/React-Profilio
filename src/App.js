@@ -1,7 +1,8 @@
 import React , {Component} from 'react';
+import {BrowserRouter as Router} from "react-router-dom";
+
 
 import SlideOut from "./components/SlideOut";
-
 import Header from './common/Header'
 import Main from "./common/Main";
 import Footer from "./common/Footer";
@@ -32,14 +33,14 @@ class App extends Component{
                     {name:"Behance", href:"#"},
                 ],
                 sectionNav: [
-                    {name:"Home", href:"#section1"},
-                    {name:"About", href:"#section2"},
-                    {name:"Skill", href:"#section3"},
-                    {name:"Experience+", href:"#section4"},
-                    {name:"Education", href:"#section5"},
-                    {name:"Work", href:"#section6"},
-                    {name:"Blog", href:"#section7"},
-                    {name:"Contact", href:"#section8"},
+                    {name:"Home", href:"/"},
+                    {name:"About", href:"/about"},
+                    {name:"Skill", href:"/skill"},
+                    {name:"Experience+", href:"/experience"},
+                    {name:"Education", href:"/education"},
+                    {name:"Work", href:"/work"},
+                    {name:"Blog", href:"/blog"},
+                    {name:"Contact", href:"/contact"},
                 ],
             },
             footer :{
@@ -59,7 +60,7 @@ class App extends Component{
 
     render() {
         return (
-            <div>
+            <Router>
                 {/* <!-- Slide Out --> */ }
                 <div className="slide-out-overlay"></div>
                 <SlideOut header ={this.data.header} slideOut={this.data.slideOut}/>
@@ -73,17 +74,18 @@ class App extends Component{
                 </div>
                 {/* <!-- end .responsive-menu -->*/ }
 
-                {/*<!-- Section Navigation --> */ }
+                {/*<!-- Section Navigation -->
                 <div className="section-nav">
                     <nav className="section1">
                         <a href="#section2" className="forward"><i className="md md-chevron-right"></i></a>
                         <a href="#section1" className="backward"><i className="md md-chevron-left"></i></a>
                     </nav>
-                </div>  {/*<!-- end .section-nav --> */ }
+                </div>
+                <!-- end .section-nav --> */ }
 
                 <Main/>
                 <Footer footer = {this.data.footer}/>
-            </div>
+            </Router>
         );
     }
 }

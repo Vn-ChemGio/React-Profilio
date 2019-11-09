@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
+
 
 class Header extends Component {
     render(){
@@ -22,18 +24,18 @@ class Header extends Component {
                     </div> {/* end .popup */}
                 </div> {/* end .top */}
                 <div className="bottom clearfix">
-                    <div className="title"><a href="#">Sility</a></div>
+                    <div className="title"><a href="/">Sility</a></div>
                     <div className="header-action-button-wrapper">
                         <a href className="header-action-button action-button"><i className="md md-add" /></a>
                     </div> {/* end .header-action-button-wrapper */}
                     <a href className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
                     <nav className="main-nav">
                         <ul className="list-unstyled">
-                            {sectionNav.map((each, index) =>   <li className={index === 0? "active" :""} key={index}><a href = {each.href}>{each.name}</a></li>)}
+                            {sectionNav.map((each, index) => <li className={index === 0? "active" :""} key={index}> <Link to={each.href}>{each.name}</Link></li>)}
                         </ul>
                     </nav> {/* end .main-nav */}
                 </div> {/* end .bottom */}
-            </header> 
+            </header>
         )
     }
 }
