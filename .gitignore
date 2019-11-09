@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 public/sility
 public/index2.html
-
+package-lock.json
 
