@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { Link, withRouter } from "react-router-dom";
-import $ from 'jquery';
-
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     constructor(){
@@ -41,12 +39,6 @@ class Header extends Component {
                     <nav className="main-nav">
                         <ul className="list-unstyled">
                             {sectionNav.map((each, index) => <li className={this.state.activeNav == each.href? "active" :""} key={index} onClick={() => this.selectNav(each)}> <Link to={each.href}>{each.name}</Link></li>)}
-
-                            {
-                                sectionNav.forEach( (each) => {
-                                    console.log(this.state.activeNav , each.href, this.state.activeNav == each.href)
-                                })
-                            }
                         </ul>
                     </nav> {/* end .main-nav */}
                 </div> {/* end .bottom */}
@@ -58,6 +50,5 @@ class Header extends Component {
         this.setState({activeNav: each.href})
     }
 }
-
 
 export default Header;
