@@ -174,7 +174,7 @@
 			var vWidth = $(window).width();
 			var vheight = $(window).height();
 			$('.sections-wrapper > section').css('width', vWidth);
-			$('.sections-wrapper').css('width', vWidth * count).css('height', $('.sections-wrapper section.active').outerHeight());
+			//$('.sections-wrapper').css('width', vWidth * count).css('height', $('.sections-wrapper section.active').outerHeight());
 		}
 		function disableButtons(url) {
 			if (url == count) {
@@ -214,7 +214,7 @@
 			$('#section'+url).addClass('active');
 			$('.main-nav a[href="#section'+url+'"]').parent().addClass('active');
 			$('.responsive-nav a[href="#section'+url+'"]').parent().addClass('active');
-			$('.sections-wrapper').css('height', $('.sections-wrapper section.active').outerHeight());
+			//$('.sections-wrapper').css('height', $('.sections-wrapper section.active').outerHeight());
 			disableButtons(url);
 		}
 		horizontalSections();

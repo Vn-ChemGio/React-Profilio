@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class Education extends Component {
     render() {
         return (
@@ -159,6 +160,8 @@ class Education extends Component {
             </section>
         )
     }
+
+
 }
 
 export default Education;

@@ -910,8 +910,11 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 .sections-wrapper > section {
 	width: 1600px;
 	height: auto;
+	/*
 	float: left;
+	*/
 	padding: 72px 12px;
+	margin: 0 auto;
 }
 .sections-wrapper > section.no-padding-bottom {
 	padding-bottom: 0;

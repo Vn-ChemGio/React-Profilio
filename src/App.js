@@ -73,14 +73,14 @@ class App extends Component{
                 </div>
                 {/* <!-- end .responsive-menu -->*/ }
 
-                {/*<!-- Section Navigation -->
+                {/*<!-- Section Navigation -->/*}
                 <div className="section-nav">
                     <nav className="section1">
                         <a href="#section2" className="forward"><i className="md md-chevron-right"></i></a>
                         <a href="#section1" className="backward"><i className="md md-chevron-left"></i></a>
                     </nav>
                 </div>
-                <!-- end .section-nav --> */ }
+                  {/*<!-- end .section-nav --> */ }
 
                 <Main/>
                 <Footer footer = {this.data.footer}/>
