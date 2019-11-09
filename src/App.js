@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
-
+import $ from 'jquery';
 
 import SlideOut from "./components/SlideOut";
 import Header from './common/Header'
@@ -71,6 +71,11 @@ class App extends Component{
                     <nav className="responsive-nav"></nav>
                     {/* <!-- end .responsive-nav -->*/ }
                 </div>
+
+                <div id="logo" className="welcome-screen loading-welcome">
+                    <div className="helper"></div>
+                    <img src="images/loading-logo.png" />
+                </div>
                 {/* <!-- end .responsive-menu -->*/ }
 
                 {/*<!-- Section Navigation -->/*}
@@ -86,6 +91,13 @@ class App extends Component{
                 <Footer footer = {this.data.footer}/>
             </Router>
         );
+    }
+
+    componentDidMount() {
+        $('#logo').fadeIn();
+        setTimeout(function () {
+            $('#logo').fadeOut();
+        },2000)
     }
 }
 
