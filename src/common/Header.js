@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import $ from 'jquery';
 
 
 class Header extends Component {
+    constructor(){
+        super();
+        this.state = {
+            activeNav :window.location.pathname
+        }
+
+    }
+
     render(){
         let {socialNav, sectionNav} = this.props.header;
         return(
@@ -32,12 +40,22 @@ class Header extends Component {
                     <a href className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
                     <nav className="main-nav">
                         <ul className="list-unstyled">
-                            {sectionNav.map((each, index) => <li className={index === 0? "active" :""} key={index}> <Link to={each.href}>{each.name}</Link></li>)}
+                            {sectionNav.map((each, index) => <li className={this.state.activeNav == each.href? "active" :""} key={index} onClick={() => this.selectNav(each)}> <Link to={each.href}>{each.name}</Link></li>)}
+
+                            {
+                                sectionNav.forEach( (each) => {
+                                    console.log(this.state.activeNav , each.href, this.state.activeNav == each.href)
+                                })
+                            }
                         </ul>
                     </nav> {/* end .main-nav */}
                 </div> {/* end .bottom */}
             </header>
         )
+    }
+
+    selectNav (each){
+        this.setState({activeNav: each.href})
     }
 }
 
