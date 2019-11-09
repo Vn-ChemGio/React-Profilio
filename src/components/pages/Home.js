@@ -7,13 +7,18 @@ class Home extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-7 vertical-center padding-fix">
-                            <h1>Design<sup>+</sup> Develope<sup>+</sup> Interactive<sup>+</sup> Art<sup>+</sup>
+                            <h1 style={{display:"inline-flex"}}> <code>Coder<sup>+</sup> </code> &amp; <code>Developer<sup>+</sup></code>
                             </h1>
-                            <p>Hello, I’m Benjamin Thomson. I Have 8 years of experience in Web and UX design. I
-                                am worked on a variety of brands and with agencies both big and small.</p>
-                            <p className="button-row"><a href={"/xxxx"} className="button solid-button white">Hire
-                                Me
-                                Now</a><a href={"/xxxx"} className="button solid-button purple">Download CV</a></p>
+                            <p> Với nhiều năm làm việc trong ngành CNTT, cũng như kinh doanh. <br/>
+                                Tại nhiều vị trí làm việc (Coder, Developer, Manager...), <br/>
+                                cũng như nhiều dự án ở nhiều mảng ứng dụng (Website, Game, Mobile VAT..)<br/>
+                                Đã đem lại cho tôi nhiều kiến thức cũng như kinh nghiệm thực tế trong quá trình làm việc<br/>
+                                Vì vậy, tôi tự tin mình sẽ chắc chắn làm hài lòng các bạn dù ở bất kì vị trí nào.</p>
+                            <p className="button-row">
+                                <a href={"tel:+84904565090"} className="button solid-button white">Gọi cho tôi</a>
+                                <a href={"http://windblade.herokuapp.com/vCard"} className="button solid-button purple">Lưu Contact</a>
+
+                            </p>
                         </div>
                         {/* end .col-sm-7 */}
                         <div className="col-sm-5 vertical-center">

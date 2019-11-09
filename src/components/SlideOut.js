@@ -22,11 +22,11 @@ class SlideOut extends Component{
                     </div> {/* end .slide-out-popup */}
                     <div className="image"><img src="images/head01.png" alt="alt text" className="img-responsive" /></div>
                     <div className="content">
-                        <h5>Benjamin Thomson</h5>
-                        <span>Web &amp; UX Designer</span>
+                        <h5>Phạm Ngọc Quỳnh</h5>
+                        <span>Coder &amp; Developer</span>
                     </div> {/* end .content */}
                     <div className="text-right">
-                        <a href className="button link-button white icon-left"><i className="md md-file-download" />Download Resume</a>
+                        <a href="http://windblade.herokuapp.com/vCard" className="button link-button white icon-left"><i className="md md-file-download" />Download VCard</a>
                     </div> {/* end .text-right */}
                 </header> {/* end .slide-out-header */}
                 <div className="slide-out-widgets">

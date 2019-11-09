@@ -8,7 +8,7 @@ class Header extends Component {
         return(
             <header className="header">
                 <div className="top clearfix">
-                    <a href="#section8" className="available"><i className="ion-ios-email-outline" /><span>Available For Freelance</span></a>
+                    <Link to="/contact"  className="available"><i className="ion-ios-email-outline" /><span>Available Now</span></Link>
                     <div className="right-icons">
                         <a href className="open-search header-open-search"><i className="md md-search" /></a>
                         <a href className="download"><i className="md md-file-download" /></a>
@@ -24,7 +24,7 @@ class Header extends Component {
                     </div> {/* end .popup */}
                 </div> {/* end .top */}
                 <div className="bottom clearfix">
-                    <div className="title"><a href="/">Sility</a></div>
+                    <div className="title"><a href="/">Wind Blade</a></div>
                     <div className="header-action-button-wrapper">
                         <a href className="header-action-button action-button"><i className="md md-add" /></a>
                     </div> {/* end .header-action-button-wrapper */}
