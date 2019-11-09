@@ -38,7 +38,7 @@ class Header extends Component {
                     <a href className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
                     <nav className="main-nav">
                         <ul className="list-unstyled">
-                            {sectionNav.map((each, index) => <li className={this.state.activeNav == each.href? "active" :""} key={index} onClick={() => this.selectNav(each)}> <Link to={each.href}>{each.name}</Link></li>)}
+                            {sectionNav.map((each, index) => <li className={this.state.activeNav === each.href? "active" :""} key={index} onClick={() => this.selectNav(each)}> <Link to={each.href}>{each.name}</Link></li>)}
                         </ul>
                     </nav> {/* end .main-nav */}
                 </div> {/* end .bottom */}
@@ -50,5 +50,4 @@ class Header extends Component {
         this.setState({activeNav: each.href})
     }
 }
-
 export default Header;

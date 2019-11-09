@@ -73,8 +73,8 @@ class App extends Component{
                 </div>
 
                 <div id="logo" className="welcome-screen loading-welcome">
-                    <div className="helper"></div>
-                    <img src="images/loading-logo.png" />
+                    <div className="helper">&nbsp;</div>
+                    <img src="images/loading-logo.png" alt="loading-logo" />
                 </div>
                 {/* <!-- end .responsive-menu -->*/ }
 

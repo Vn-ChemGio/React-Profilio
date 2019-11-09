@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 class Skill extends Component {
     render() {
@@ -129,6 +130,43 @@ class Skill extends Component {
                 {/* end .container */}
             </section>
         )
+    }
+
+    componentDidMount() {
+        $('.progress-bar').css('width', function () {
+            return ($(this).attr('aria-valuenow') + '%');
+        });
+
+        $('.dial').on('load', function (event, isInView) {
+            if (isInView) {
+                var $this = $(this);
+                var myVal = $this.attr("value");
+                var color = $this.attr("data-color");
+                $this.knob({
+                    readOnly: true,
+                    width: 200,
+                    rotation: 'anticlockwise',
+                    thickness: .05,
+                    inputColor: '#232323',
+                    fgColor: color,
+                    bgColor: '#e8e8e8',
+                    'draw' : function () {
+                        $(this.i).val(this.cv + '%')
+                    }
+                });
+                $({
+                    value: 0
+                }).animate({
+                    value: myVal
+                }, {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.val(Math.ceil(this.value)).trigger('change');
+                    }
+                });
+            }
+        });
     }
 }
 
