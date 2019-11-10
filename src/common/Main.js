@@ -15,6 +15,7 @@ import Contact from '../components/pages/Contact';
 class Main extends Component {
 
     render() {
+        let {skillValue} = this.props.value;
         return (
             <div className="sections">
                 <div className="sections-wrapper clearfix">
@@ -29,7 +30,7 @@ class Main extends Component {
                         </Route>
 
                         <Route path="/skill" exact>
-                            <Skill/>
+                            <Skill value = {skillValue}/>
                         </Route>
 
                         <Route path="/experience" exact>
