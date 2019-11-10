@@ -135,19 +135,6 @@
 			$('.search').removeClass('open');
 		});
 
-		/*==========  Portfolio  ==========*/
-		var $portfolioContainer = $('#portfolio').imagesLoaded(function() {
-			$portfolioContainer.isotope({
-				itemSelector: '.item',
-				layoutMode: 'masonry'
-			});
-			horizontalSections();
-		});
-		$('#portfolio-filters').on('click', 'button', function() {
-			var filterValue = $(this).attr('data-filter');
-			$portfolioContainer.isotope({filter: filterValue});
-		});
-
 		/*==========  Blog  ==========*/
 		var $blogContainer = $('#blog-masonry').imagesLoaded(function() {
 			$blogContainer.isotope({
