@@ -4,39 +4,53 @@ import Knob from "../Knob";
 import $ from 'jquery';
 
 class Skill extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            Knob: {
+            Knob :{
                 value1: 0,
                 value2: 0,
                 value3: 0
-            },
-            KnobMax :{
-                value1: 90,
-                value2: 80,
-                value3: 70
             }
         };
+        this.Knob = {
+            input1:90, input2:80, input3:75
+        };
 
+       setInterval(() =>{
+            let {value1, value2, value3, update} = this.getNextValue(this.state.Knob);
+            if(update){
+                this.setState({
+                    Knob:  {value1, value2, value3}
+                })
+            }
 
-        /*let inteval = setInterval(() =>{
-            this.setState({
-                Knob: this.getNextValue(this.state.Knob)
-            })
-        },500)*/
+            //TODO: clear Inteval
+        },10)
 
     }
 
     getNextValue (Knob){
-        return {
-            Knob:{
-                value1 : Knob.value1 < this.state.KnobMax.value1 ? Knob.value1+1 : this.state.KnobMax.value1,
-                value2 : Knob.value2 < this.state.KnobMax.value2 ? Knob.value2+1 : this.state.KnobMax.value2,
-                value3 : Knob.value3 < this.state.KnobMax.value3 ? Knob.value3+1 : this.state.KnobMax.value3,
-            }
+        let update = false;
+        let {value1, value2, value3} = Knob;
+        let {input1, input2, input3} = this.Knob;
+
+        if(value1 <input1){
+            value1++;
+            update = true;
         }
+        if(value2 <input2){
+            value2++;
+            update = true;
+        }
+
+        if(value3 < input3){
+            value3++;
+            update=true;
+        }
+
+        return({value1,value2,value3,update})
     }
     render() {
         return (
@@ -126,7 +140,7 @@ class Skill extends Component {
                                 <div className="circle-progress">
                                     <div className="circle-progress">
                                         <Knob
-                                            value={this.state.KnobMax.value1}
+                                            value={this.state.Knob.value1}
                                             lineCap={'round'}
                                             readOnly={true}
                                             width={200}
@@ -134,13 +148,7 @@ class Skill extends Component {
                                             inputColor='#232323'
                                             fgColor="#7c4dff"
                                             bgColor='#e8e8e8'
-                                            min={0}
-                                            max={100}
-                                            step={1}
-
-
                                         />
-
                                     </div>
                                 </div>
                                 {/* end .circle-progress */}
@@ -154,7 +162,7 @@ class Skill extends Component {
                             <div className="circle-progress-wrapper clearfix">
                                 <div className="circle-progress">
                                     <Knob
-                                        value={this.state.KnobMax.value2}
+                                        value={this.state.Knob.value1}
                                         lineCap={'round'}
                                         readOnly={true}
                                         width={200}
@@ -162,11 +170,6 @@ class Skill extends Component {
                                         inputColor='#232323'
                                         fgColor="#7c4dff"
                                         bgColor='#e8e8e8'
-                                        min={0}
-                                        max={100}
-                                        step={1}
-
-
                                     />
 
                                 </div>
@@ -182,7 +185,7 @@ class Skill extends Component {
                                 <div className="circle-progress">
                                     <div className="circle-progress">
                                         <Knob
-                                            value={this.state.KnobMax.value3}
+                                            value={this.state.Knob.value1}
                                             lineCap={'round'}
                                             readOnly={true}
                                             width={200}
@@ -190,11 +193,6 @@ class Skill extends Component {
                                             inputColor='#232323'
                                             fgColor="#7c4dff"
                                             bgColor='#e8e8e8'
-                                            min={0}
-                                            max={100}
-                                            step={1}
-
-
                                         />
 
                                     </div>
@@ -217,37 +215,6 @@ class Skill extends Component {
     componentDidMount() {
         $('.progress-bar').css('width', function () {
             return ($(this).attr('aria-valuenow') + '%');
-        });
-
-
-        $('.dial').on('load', function (event, isInView) {
-            var $this = $(this);
-            var myVal = $this.attr("value");
-            var color = $this.attr("data-color");
-            $this.knob({
-                readOnly: true,
-                width: 200,
-                rotation: 'anticlockwise',
-                thickness: .05,
-                inputColor: '#232323',
-                fgColor: color,
-                bgColor: '#e8e8e8',
-                'draw': function () {
-                    $(this.i).val(this.cv + '%')
-                }
-            });
-            $({
-                value: 0
-            }).animate({
-                value: myVal
-            }, {
-                duration: 1000,
-                easing: 'swing',
-                step: function () {
-                    $this.val(Math.ceil(this.value)).trigger('change');
-                }
-            });
-
         });
     }
 }

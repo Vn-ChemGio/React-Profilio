@@ -13,6 +13,7 @@ import Contact from '../components/pages/Contact';
 
 
 class Main extends Component {
+
     render() {
         return (
             <div className="sections">
@@ -55,6 +56,14 @@ class Main extends Component {
                 </div>
             </div>
         )
+    }
+
+    componentDidMount() {
+        console.log("mount")
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("update")
     }
 }
 

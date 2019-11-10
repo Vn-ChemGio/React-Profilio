@@ -89,14 +89,15 @@ class Knob extends React.Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    //TODO: Don't know that, but it make warning because not recommend in lifecycle
+/*    componentWillReceiveProps(nextProps) {
         if (nextProps.width && this.w !== nextProps.width) {
             this.w = nextProps.width;
         }
         if (nextProps.height && this.h !== nextProps.height) {
             this.h = nextProps.height;
         }
-    }
+    }*/
 
     componentDidUpdate() {
         this.drawCanvas();

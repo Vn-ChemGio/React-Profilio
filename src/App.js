@@ -95,9 +95,9 @@ class App extends Component{
 
     componentDidMount() {
         $('#logo').fadeIn();
-        setTimeout(function () {
+       /* setTimeout(function () {*/
             $('#logo').fadeOut();
-        },2000)
+/*        },2000)*/
     }
 }
 
