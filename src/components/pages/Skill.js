@@ -8,50 +8,51 @@ class Skill extends Component {
         super(props);
 
         this.state = {
-            Knob :{
+            Knob: {
                 value1: 0,
                 value2: 0,
                 value3: 0
             }
         };
         this.Knob = {
-            input1:90, input2:80, input3:75
+            input1: 90, input2: 80, input3: 75
         };
 
-       setInterval(() =>{
+        setInterval(() => {
             let {value1, value2, value3, update} = this.getNextValue(this.state.Knob);
-            if(update){
+            if (update) {
                 this.setState({
-                    Knob:  {value1, value2, value3}
+                    Knob: {value1, value2, value3}
                 })
             }
 
             //TODO: clear Inteval
-        },10)
+        }, 10)
 
     }
 
-    getNextValue (Knob){
+    getNextValue(Knob) {
         let update = false;
         let {value1, value2, value3} = Knob;
         let {input1, input2, input3} = this.Knob;
 
-        if(value1 <input1){
+        if (value1 < input1) {
             value1++;
             update = true;
         }
-        if(value2 <input2){
+        if (value2 < input2) {
             value2++;
             update = true;
         }
 
-        if(value3 < input3){
+        if (value3 < input3) {
             value3++;
-            update=true;
+            update = true;
         }
 
-        return({value1,value2,value3,update})
+        return ({value1, value2, value3, update})
     }
+
     render() {
         return (
             <section id="section3">
