@@ -60,14 +60,14 @@ class App extends Component {
                         {name: "French Advanced", value: 80},
                         {name: "German Basic", value: 70}
                     ],
-                    TechnicalSkill:[
+                    TechnicalSkill: [
                         {name: "Woodpress", value: 90},
                         {name: "Photoshop", value: 80},
                         {name: "HTML &amp; CSS", value: 70},
                         {name: "JavaScript", value: 65},
 
                     ],
-                    Knowledge:[
+                    Knowledge: [
                         "Install and Configure",
                         "Web Usability",
                         "Digital Painting",
@@ -84,6 +84,21 @@ class App extends Component {
                         "Digital Marketing",
                     ]
 
+                },
+                workValue: {
+                    gallery: [
+                        {src: "images/portfolio01.jpg", class: "item branding print", title:"Portfolio Item - 01", category:"Branding, Print"},
+                        {src: "images/portfolio02.jpg", class: "item motion", title:"Portfolio Item - 02", category:"Motion"},
+                        {src: "images/portfolio03.jpg", class: "item print", title:"Portfolio Item - 03", category:"Print"},
+                        {src: "images/portfolio04.jpg", class: "item print branding websites", title:"Portfolio Item - 04", category:"Branding, Websites"},
+                        {src: "images/portfolio05.jpg", class: "item print branding", title:"Portfolio Item - 05", category:"Print, Branding"},
+                        {src: "images/portfolio06.jpg", class: "item motion", title:"Portfolio Item - 06", category:"Motion"},
+                        {src: "images/portfolio07.jpg", class: "item motion", title:"Portfolio Item - 07", category:"Motion"},
+                        {src: "images/portfolio08.jpg", class: "item print", title:"Portfolio Item - 08", category:"Print"},
+                        {src: "images/portfolio09.jpg", class: "item motion", title:"Portfolio Item - 09", category:"Motion"},
+                        {src: "images/portfolio10.jpg", class: "item websites", title:"Portfolio Item - 10", category:"Websites"},
+
+                    ]
                 }
             }
         }
@@ -100,7 +115,7 @@ class App extends Component {
                 {/* <!-- Head -->*/}
                 <Header header={this.data.header}/>
                 <div className="responsive-menu">
-                    <a href={true} className="responsive-menu-close">Close <i className="ion-android-close"></i></a>
+                    <a href="true" className="responsive-menu-close">Close <i className="ion-android-close"></i></a>
                     <nav className="responsive-nav"></nav>
                     {/* <!-- end .responsive-nav -->*/}
                 </div>

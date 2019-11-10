@@ -13,9 +13,8 @@ import Contact from '../components/pages/Contact';
 
 
 class Main extends Component {
-
     render() {
-        let {skillValue} = this.props.value;
+        let {skillValue, workValue} = this.props.value;
         return (
             <div className="sections">
                 <div className="sections-wrapper clearfix">
@@ -42,7 +41,7 @@ class Main extends Component {
                         </Route>
 
                         <Route path="/work" exact>
-                            <Work   />
+                            <Work  value={workValue} />
                         </Route>
 
                         <Route path="/blog" exact>
@@ -60,11 +59,11 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        console.log("mount")
+        console.log("app mount")
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log("update")
+        console.log("app update")
     }
 }
 

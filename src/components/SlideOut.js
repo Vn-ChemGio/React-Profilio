@@ -8,9 +8,9 @@ class SlideOut extends Component{
             <div className="slide-out">
                 <header className="slide-out-header clearfix">
                     <div className="clearfix">
-                        <a href className="slide-out-close pull-left"><i className="md md-close" /></a>
-                        <a href className="open-search pull-right"><i className="md md-search" /></a>
-                        <a href className="slide-out-share pull-right"><i className="md md-more-vert" /></a>
+                        <a href="true" className="slide-out-close pull-left"><i className="md md-close" /></a>
+                        <a href="true" className="open-search pull-right"><i className="md md-search" /></a>
+                        <a href="true" className="slide-out-share pull-right"><i className="md md-more-vert" /></a>
                     </div> {/* end .clearfix */}
                     {/* Popup */}
                     <div className="slide-out-popup">

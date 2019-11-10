@@ -19,7 +19,7 @@ class Skill extends Component {
         };
 
 
-        let refresh = setInterval(() => {
+        this.refresh = setInterval(() => {
             let [update1, ...values1] = Skill.getValueNext(this.state.LanguageSkill, LanguageSkill);
             let [update2, ...values2] = Skill.getValueNext(this.state.TechnicalSkill, TechnicalSkill);
 
@@ -28,10 +28,8 @@ class Skill extends Component {
                     LanguageSkill: values1,
                     TechnicalSkill: values2
                 });
-
             else
-                clearInterval(refresh)
-
+                clearInterval(this.refresh)
         },10);
 
         this.KnowledgeLeft = Knowledge.slice(0, Math.ceil( Knowledge.length/2));
@@ -115,6 +113,9 @@ class Skill extends Component {
                 {/* end .container */}
             </section>
         )
+    }
+    componentWillUnmount() {
+        clearInterval(this.refresh)
     }
 }
 

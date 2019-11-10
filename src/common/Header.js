@@ -17,9 +17,9 @@ class Header extends Component {
                 <div className="top clearfix">
                     <Link to="/contact"  className="available"><i className="ion-ios-email-outline" /><span>Available Now</span></Link>
                     <div className="right-icons">
-                        <a href className="open-search header-open-search"><i className="md md-search" /></a>
-                        <a href className="download"><i className="md md-file-download" /></a>
-                        <a href className="share"><i className="md md-more-vert" /></a>
+                        <a href="true" className="open-search header-open-search"><i className="md md-search" /></a>
+                        <a href="true" className="download"><i className="md md-file-download" /></a>
+                        <a href="true" className="share"><i className="md md-more-vert" /></a>
                     </div> {/* end .right-icons */}
                     {/* Popup */}
                     <div className="popup">
@@ -33,9 +33,9 @@ class Header extends Component {
                 <div className="bottom clearfix">
                     <div className="title"><a href="/">Wind Blade</a></div>
                     <div className="header-action-button-wrapper">
-                        <a href className="header-action-button action-button"><i className="md md-add" /></a>
+                        <a href="true" className="header-action-button action-button"><i className="md md-add" /></a>
                     </div> {/* end .header-action-button-wrapper */}
-                    <a href className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
+                    <a href="true" className="responsive-menu-open">Menu <i className="fa fa-bars" /></a>
                     <nav className="main-nav">
                         <ul className="list-unstyled">
                             {sectionNav.map((each, index) => <li className={this.state.activeNav === each.href? "active" :""} key={index} onClick={() => this.selectNav(each)}> <Link to={each.href}>{each.name}</Link></li>)}
