@@ -2064,3 +2064,63 @@ input:not([type=submit]):not([type=file]):focus, select:focus, textarea:focus {
 		line-height: 120px;
 	}
 }
+
+.welcome-screen{
+	text-align: center;
+}
+.welcome-screen .helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle
+}
+
+.welcome-screen img {
+	display: inline-block;
+	vertical-align: middle;
+	max-height: 100px;
+	max-width: 100px;
+	margin: 0 auto;
+	animation-name: pulse_animation;
+	animation-duration: 2500ms;
+	transform-origin: 50% 50%;
+	animation-timing-function: ease-in-out
+}
+
+@media (min-width: 375px) {
+	.welcome-screen img {
+		max-width: 180px !important;
+		max-height: 180px !important
+	}
+}
+@keyframes pulse_animation {
+	0% {
+		transform: scale(0.8)
+	}
+	100% {
+		transform: scale(1)
+	}
+}
+
+.loading-welcome {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	display: none;
+	z-index: 9999998;
+	opacity: 1
+}
+
+.loading-welcome.active {
+	white-space: nowrap;
+	text-align: center;
+	display: inline-block
+}
+
+.loading-welcome #welcomeImg {
+	display: none
+}
