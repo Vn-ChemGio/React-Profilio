@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
-import $ from 'jquery';
 
 import SlideOut from "./components/SlideOut";
 import Header from './common/Header'
@@ -101,7 +100,13 @@ class App extends Component {
                     ]
                 }
             }
-        }
+        };
+
+        this.state = {
+            wellComeLogo: true
+        };
+
+
     }
 
 
@@ -120,7 +125,7 @@ class App extends Component {
                     {/* <!-- end .responsive-nav -->*/}
                 </div>
 
-                <div id="logo" className="welcome-screen loading-welcome">
+                <div id="logo" className="welcome-screen loading-welcome" style={this.state.wellComeLogo ? {display: 'block'} : {display: 'none'}}>
                     <div className="helper">&nbsp;</div>
                     <img src="images/loading-logo.png" alt="loading-logo"/>
                 </div>
@@ -142,9 +147,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        $('#logo').fadeIn();
-        setTimeout(function () {
-            $('#logo').fadeOut();
+        setTimeout(() => {
+            this.setState({wellComeLogo: false})
         }, 2000)
     }
 }
