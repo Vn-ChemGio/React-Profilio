@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Masonry from "react-masonry-component";
+
 
 class Blog extends Component {
     render() {
@@ -6,8 +8,16 @@ class Blog extends Component {
             <section>
                 <div className="container">
                     <h2>Blog Post</h2>
-                    <div className="blog-posts masonry" id="blog-masonry">
-                        <div className="blog-grid-sizer"/>
+                    <Masonry
+                        className={'blog-posts masonry'} // default ''
+                        id ={'blog-masonry'}
+                        elementType={'div'} // default 'div'
+                        options={{transitionDuration: 0}} // default {}
+                        disableImagesLoaded={false} // default false
+                        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                        imagesLoadedOptions={ { background: '.my-bg-image-el' }} // default {}
+                    >
+                        <div className="blog-grid-sizer"></div>
                         <div className="blog-post image-left">
                             <div className="inner">
                                 <a href="single-blog-post.html">
@@ -141,7 +151,8 @@ class Blog extends Component {
                             {/* end .inner */}
                         </div>
                         {/* end .blog-post */}
-                    </div>
+
+                    </Masonry>
                     {/* end .blog-posts */}
                     <div className="blog-load-more">
                         <a href="single-blog-post.html" className="button solid-button white icon-right">Load

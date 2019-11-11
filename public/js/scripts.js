@@ -135,17 +135,6 @@
 			$('.search').removeClass('open');
 		});
 
-		/*==========  Blog  ==========*/
-		var $blogContainer = $('#blog-masonry').imagesLoaded(function() {
-			$blogContainer.isotope({
-				itemSelector: '.blog-post',
-				layoutMode: 'masonry',
-				masonry: {
-					columnWidth: $blogContainer.find('.blog-grid-sizer')[0]
-				}
-			});
-			horizontalSections();
-		});
 
 		/*==========  Horizontal Scroll  ==========*/
 		var hash = window.location.hash;

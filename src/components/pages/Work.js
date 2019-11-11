@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Gallery from "../Galery";
+import Masonry from "react-masonry-component";
 
 class Education extends Component {
     constructor(props) {
@@ -34,7 +34,33 @@ class Education extends Component {
                             </button>
                         </div>
 
-                        <Gallery elements={this.state.gallery}/>
+                        <Masonry
+                            className={'portfolio'} // default ''
+                            id ={'portfolio'}
+                            elementType={'div'} // default 'div'
+                            options={{transitionDuration: 0}} // default {}
+                            disableImagesLoaded={false} // default false
+                            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                            imagesLoadedOptions={ { background: '.my-bg-image-el' }} // default {}
+                        >
+                            {
+                                this.state.gallery.map((element, index) => {
+                                    return (
+                                        <div className={element.class} key={index}>
+                                            <img src={element.src}  alt = {element.name}/>
+                                            <a href={element.src} className="overlay">
+                                                <div className="background"/>
+                                                <div className="meta">
+                                                    <span className="title">{element.title}</span>
+                                                    <span className="category">{element.category}</span>
+                                                </div>
+                                                {/*<!-- end .meta -->*/}
+                                            </a>  {/*<!-- end .overlay -->*/}
+                                        </div>
+                                    );
+                                })
+                            }
+                        </Masonry>
 
                         {/* end .portfolio */}
                         <div className="portfolio-load-more">
